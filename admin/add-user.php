@@ -10,12 +10,12 @@ if (isset($_POST['save'])) {
 
     $sql = "SELECT username from user where username = '{$user}'";
     $result = mysqli_query($conn, $sql) or die("Query Failed");
-    if (mysqli_num_rows($result)) {
+    if (mysqli_num_rows($result) > 0) {
         echo "<P style='color:red; text-align: center; margin: 10px 0;'>USER NAME ALREADY EXIST.</p>";
     } else {
         $sql1 = "INSERT INTO user (first_name, last_name, username, password, role) values ('{$fname}','{$lname}', '{$user}', '{$password}', '{$role}')";
         if (mysqli_query($conn, $sql1)) {
-            header("Location: http://localhost/news-site/admin/users.php");
+            header("Location: {$hostname}/admin/users.php");
         }
     }
 } ?>
