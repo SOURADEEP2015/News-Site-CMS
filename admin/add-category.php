@@ -33,7 +33,7 @@ include "config.php"; ?>
                                     VALUES ('{$category}')";
 
                             if (mysqli_query($conn, $sql)){
-                                "location: {$hostname}/header(admin/category.php");
+                                "location: {$hostname}/header(admin/category.php)";
                             }else{
                             echo "<p style = 'color:red;text-align:center;margin: 10px 0';>Query Failed.</p>";
                             }
